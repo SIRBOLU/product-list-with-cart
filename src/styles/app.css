@@ -1,0 +1,128 @@
+@import url("./variable.css");
+@import url("./global.css");
+
+body {
+  background-color: var(--rose-100);
+}
+section {
+  margin: 5rem 8rem;
+}
+h1 {
+  font-size: 4rem;
+}
+.hero-container {
+  /* display: grid;
+  grid-template-columns: 3fr 1fr; */
+  display: flex;
+  gap: 3rem;
+}
+.hero-left {
+  width: 70%;
+}
+.hero-right {
+  width: 30%;
+}
+.hero-menu img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.hero-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 2rem;
+}
+
+.menu-category {
+  font-size: 2rem;
+  color: var(--rose-400);
+  font-weight: var(--font-medium);
+}
+.menu-name {
+  font-size: 2.2rem;
+  color: var(--rose-900);
+  font-weight: var(--font-max);
+}
+.menu-price {
+  color: var(--red);
+  font-size: 2rem;
+  font-weight: var(--font-max);
+}
+.cart-text {
+  font-size: 2.5rem;
+  color: var(--red);
+  font-weight: var(--font-max);
+  padding: 3rem 0 0 3rem;
+}
+.hero-right {
+  width: 400px;
+  padding: 3rem 0 3rem 0;
+  height: 310px;
+  /* background: url(../assets/images/illustration-empty-cart.svg) no-repeat
+    center/cover; */
+  background-color: var(--rose-50);
+}
+.cart-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+.cart-appear {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--rose-500);
+  font-weight: var(--font-medium);
+  padding-bottom: 2rem;
+}
+.add-button {
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  border: 2px solid var(--rose-400);
+}
+.button-text {
+  font-size: 1.6rem;
+  font-weight: var(--font-max);
+}
+.add-button .cart-img {
+  width: 25px;
+  height: 25px;
+}
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.button-overall {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -3rem;
+}
+@media (max-width: 1500px) {
+  .hero-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 2rem;
+  }
+}
+@media (max-width: 1125px) {
+  .hero-menu {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+    gap: 2rem;
+  }
+}
+@media (max-width: 780px) {
+  .hero-container {
+    /* display: grid;
+  grid-template-columns: 3fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
