@@ -222,6 +222,7 @@
 
 // export default Hero;
 
+// NEW
 import React, { useState } from "react";
 import { details } from "./data";
 import empty from "../../assets/images/illustration-empty-cart.svg";
@@ -434,31 +435,33 @@ const Hero = () => {
             <p className="hope">We hope you enjoy your food!</p>
 
             <div className="cart-item-confirm">
-              {cartItems.map((item) => (
-                <div key={item.name} className="cart-item">
-                  <div className="cart-item-split">
-                    <img
-                      src={item.image.thumbnail}
-                      alt="img"
-                      width={50}
-                      height={50}
-                    />
-                    <div>
-                      <p className="cart-item-name">{item.name}</p>
-                      <p>
-                        <span className="multiply">{item.quantity}x</span>{" "}
-                        <span className="middle">
-                          @ ${Number(item.price).toFixed(2)}
-                        </span>
-                      </p>
+              <div className="modal-scroll">
+                {cartItems.map((item) => (
+                  <div key={item.name} className="cart-item">
+                    <div className="cart-item-split">
+                      <img
+                        src={item.image.thumbnail}
+                        alt="img"
+                        width={50}
+                        height={50}
+                      />
+                      <div>
+                        <p className="cart-item-name">{item.name}</p>
+                        <p>
+                          <span className="multiply">{item.quantity}x</span>{" "}
+                          <span className="middle">
+                            @ ${Number(item.price).toFixed(2)}
+                          </span>
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  <p className="total-amount">
-                    ${(item.quantity * Number(item.price)).toFixed(2)}
-                  </p>
-                </div>
-              ))}
+                    <p className="total-amount">
+                      ${(item.quantity * Number(item.price)).toFixed(2)}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="cart-total">
                 <p className="cart-total-order">Order Total</p>

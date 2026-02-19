@@ -290,3 +290,13 @@ h1 {
 .cart-item-split img {
   border-radius: 5px;
 }
+.modal {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-scroll {
+  max-height: 40vh;
+  overflow-y: auto;
+}
