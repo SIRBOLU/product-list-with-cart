@@ -319,10 +319,16 @@ const Hero = () => {
 
               return (
                 <div key={item.name} className="menu-card">
-                  <img
-                    src={item.image?.desktop || item.image}
-                    alt={item.name}
-                  />
+                  <div
+                    className={`menu-image ${
+                      existingItem ? "active-image" : ""
+                    }`}
+                  >
+                    <img
+                      src={item.image?.desktop || item.image}
+                      alt={item.name}
+                    />
+                  </div>
 
                   <div className="button-overall">
                     {existingItem ? (

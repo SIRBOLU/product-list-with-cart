@@ -300,3 +300,10 @@ h1 {
   max-height: 40vh;
   overflow-y: auto;
 }
+.menu-image {
+  transition: ease-in-out 0.5s;
+}
+.active-image {
+  outline: 2px solid var(--red);
+  border-radius: 10px;
+}
