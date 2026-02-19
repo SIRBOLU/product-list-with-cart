@@ -152,6 +152,10 @@ h1 {
   border: 1px solid white;
   color: white;
 }
+.quantity-control button > img {
+  width: 10px;
+  height: 10px;
+}
 .quantity-control button:hover {
   background-color: white;
   color: var(--red);
@@ -169,6 +173,7 @@ h1 {
   font-size: 1.5rem;
   font-weight: var(--font-medium);
   color: var(--rose-900);
+  padding-bottom: 0.7rem;
 }
 .cart-item .multiply {
   font-size: 1.3rem;
@@ -255,4 +260,34 @@ h1 {
 .carbon-span {
   font-size: inherit;
   font-weight: var(--font-max);
+}
+.modal h2 {
+  font-weight: var(--font-max);
+  font-size: 2rem;
+  padding: 1rem 0 3px 0;
+}
+.cart-item-confirm {
+  background-color: var(--rose-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+.cart-item-confirm .hope {
+  font-size: 1.3rem;
+}
+.hope {
+  font-size: 1.4rem;
+  color: var(--rose-500);
+  padding-bottom: 3rem;
+}
+.cart-item-split {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.cart-item-split img {
+  border-radius: 5px;
 }

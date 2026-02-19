@@ -230,7 +230,7 @@ import carbon from "../../assets/images/icon-carbon-neutral.svg";
 // import derement from "../../assets/images/icon-decrement-quantity.svg";
 // import increment from "../../assets/images/icon-increment-quantity.svg";
 import remove from "../../assets/images/icon-remove-item.svg";
-// import confirmOrder from "../../assets/images/icon-order-confirmed.svg";
+import confirmOrder from "../../assets/images/icon-order-confirmed.svg";
 
 const Hero = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -418,27 +418,42 @@ const Hero = () => {
       {orderConfirmed && (
         <div className="modal-overlay">
           <div className="modal">
+            <img src={confirmOrder} alt="order" width={40} height={40} />
             <h2>Order Confirmed</h2>
-            <p>We hope you enjoy your food!</p>
+            <p className="hope">We hope you enjoy your food!</p>
 
-            {cartItems.map((item) => (
-              <div key={item.name} className="cart-item">
-                <div>
-                  <p>{item.name}</p>
-                  <p>
-                    {item.quantity}x @ ${Number(item.price).toFixed(2)}
+            <div className="cart-item-confirm">
+              {cartItems.map((item) => (
+                <div key={item.name} className="cart-item">
+                  <div className="cart-item-split">
+                    <img
+                      src={item.image.thumbnail}
+                      alt="img"
+                      width={50}
+                      height={50}
+                    />
+                    <div>
+                      <p className="cart-item-name">{item.name}</p>
+                      <p>
+                        <span className="multiply">{item.quantity}x</span>{" "}
+                        <span className="middle">
+                          @ ${Number(item.price).toFixed(2)}
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="total-amount">
+                    ${(item.quantity * Number(item.price)).toFixed(2)}
                   </p>
                 </div>
+              ))}
 
-                <p>${(item.quantity * Number(item.price)).toFixed(2)}</p>
+              <div className="cart-total">
+                <p className="cart-total-order">Order Total</p>
+                <p className="cart-total-price">${totalPrice.toFixed(2)}</p>
               </div>
-            ))}
-
-            <div className="cart-total">
-              <p>Order Total</p>
-              <p>${totalPrice.toFixed(2)}</p>
             </div>
-
             <button
               className="confirm-button"
               onClick={() => {
