@@ -227,8 +227,6 @@ import { details } from "./data";
 import empty from "../../assets/images/illustration-empty-cart.svg";
 import cartIcon from "../../assets/images/icon-add-to-cart.svg";
 import carbon from "../../assets/images/icon-carbon-neutral.svg";
-// import derement from "../../assets/images/icon-decrement-quantity.svg";
-// import increment from "../../assets/images/icon-increment-quantity.svg";
 import remove from "../../assets/images/icon-remove-item.svg";
 import confirmOrder from "../../assets/images/icon-order-confirmed.svg";
 
@@ -238,10 +236,7 @@ const Hero = () => {
 
   // Add item to cart
   const handleAddToCart = (item) => {
-    // Make a copy of cartItems
     let updatedCart = [...cartItems];
-
-    // Check if item already exists
     let itemFound = false;
 
     for (let i = 0; i < updatedCart.length; i++) {
@@ -252,7 +247,6 @@ const Hero = () => {
       }
     }
 
-    // If item does not exist, add it
     if (!itemFound) {
       updatedCart.push({ ...item, quantity: 1 });
     }
@@ -272,6 +266,20 @@ const Hero = () => {
           updatedCart.push({ ...cartItems[i], quantity: newQuantity });
         }
       } else {
+        updatedCart.push(cartItems[i]);
+      }
+    }
+
+    setCartItems(updatedCart);
+  };
+
+  // ✅ FIX ADDED HERE
+  // Remove item completely
+  const handleRemoveItem = (item) => {
+    let updatedCart = [];
+
+    for (let i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].name !== item.name) {
         updatedCart.push(cartItems[i]);
       }
     }
@@ -384,7 +392,10 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <button className="remove-container">
+                    <button
+                      className="remove-container"
+                      onClick={() => handleRemoveItem(item)}
+                    >
                       <img src={remove} alt="remove" />
                     </button>
                   </div>
@@ -394,14 +405,6 @@ const Hero = () => {
               <div className="cart-total">
                 <p className="cart-total-order">Order Total</p>
                 <p className="cart-total-price">${totalPrice.toFixed(2)}</p>
-              </div>
-
-              <div className="carbon-container">
-                <img src={carbon} alt="carbon" width={30} height={30} />
-                <p className="carbon-text">
-                  This is a <span className="carbon-span">carbon-neutral</span>{" "}
-                  delivery
-                </p>
               </div>
 
               <button
@@ -454,6 +457,7 @@ const Hero = () => {
                 <p className="cart-total-price">${totalPrice.toFixed(2)}</p>
               </div>
             </div>
+
             <button
               className="confirm-button"
               onClick={() => {
