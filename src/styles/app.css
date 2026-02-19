@@ -73,9 +73,11 @@ h1 {
   padding-bottom: 2rem;
 }
 .add-button {
+  width: 200px;
   padding: 1rem 3rem;
   border-radius: 3rem;
   border: 2px solid var(--rose-400);
+  cursor: pointer;
 }
 .button-text {
   font-size: 1.6rem;
@@ -129,8 +131,9 @@ h1 {
   }
 }
 .quantity-control {
+  width: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   background: var(--red);
@@ -140,14 +143,19 @@ h1 {
 }
 
 .quantity-control button {
-  background: white;
+  background: inherit;
   border: none;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   cursor: pointer;
+  border: 1px solid white;
+  color: white;
 }
-
+.quantity-control button:hover {
+  background-color: white;
+  color: var(--red);
+}
 .cart-items {
   padding: 2rem;
 }
@@ -157,14 +165,40 @@ h1 {
   justify-content: space-between;
   margin-bottom: 1.5rem;
 }
-
+.cart-item-name {
+  font-size: 1.5rem;
+  font-weight: var(--font-medium);
+  color: var(--rose-900);
+}
+.cart-item .multiply {
+  font-size: 1.3rem;
+  font-weight: var(--font-max);
+  color: var(--red);
+}
+.cart-item .middle {
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: var(--rose-500);
+}
+.cart-item .total-amount {
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+  color: var(--rose-500);
+}
 .cart-total {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
   margin: 2rem 0;
 }
-
+.cart-total-order {
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+}
+.cart-total-price {
+  font-size: 2rem;
+  color: var(--rose-900);
+}
 .confirm-button {
   width: 100%;
   padding: 1.2rem;
@@ -174,8 +208,12 @@ h1 {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: var(--font-medium);
 }
-
+.confirm-button:hover {
+  background-color: rgb(138, 38, 38);
+}
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -190,4 +228,31 @@ h1 {
   padding: 3rem;
   border-radius: 15px;
   width: 400px;
+}
+.sign {
+  font-size: 1.5rem;
+}
+
+.remove-container {
+  border-radius: 50%;
+  padding: 3px;
+  border: 1px solid var(--rose-500);
+  cursor: pointer;
+}
+.carbon-container {
+  background-color: var(--rose-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 1rem 0;
+}
+.carbon-text {
+  font-size: 1.2rem;
+}
+.carbon-span {
+  font-size: inherit;
+  font-weight: var(--font-max);
 }
