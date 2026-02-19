@@ -223,7 +223,7 @@
 // export default Hero;
 
 // NEW
-import React, { useState } from "react";
+import { useState } from "react";
 import { details } from "./data";
 import empty from "../../assets/images/illustration-empty-cart.svg";
 import cartIcon from "../../assets/images/icon-add-to-cart.svg";
