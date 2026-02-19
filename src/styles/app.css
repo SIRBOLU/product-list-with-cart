@@ -17,9 +17,7 @@ h1 {
 .hero-left {
   width: 70%;
 }
-.hero-right {
-  width: 30%;
-}
+
 .hero-menu img {
   width: 100%;
   height: auto;
@@ -55,7 +53,7 @@ h1 {
 .hero-right {
   width: 400px;
   padding: 3rem 0 3rem 0;
-  height: 310px;
+  height: fit-content;
   background-color: var(--rose-50);
 }
 .cart-container {
@@ -189,6 +187,7 @@ h1 {
   font-size: 1.3rem;
   font-weight: var(--font-medium);
   color: var(--rose-500);
+  padding-top: 3px;
 }
 .cart-total {
   display: flex;

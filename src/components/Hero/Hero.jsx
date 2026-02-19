@@ -407,6 +407,14 @@ const Hero = () => {
                 <p className="cart-total-price">${totalPrice.toFixed(2)}</p>
               </div>
 
+              <div className="carbon-container">
+                <img src={carbon} alt="carbon" width={30} height={30} />
+                <p className="carbon-text">
+                  This is a <span className="carbon-span">carbon-neutral</span>{" "}
+                  delivery
+                </p>
+              </div>
+
               <button
                 className="confirm-button"
                 onClick={() => setOrderConfirmed(true)}
